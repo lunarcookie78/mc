@@ -1,0 +1,27 @@
+ // Program 4- Program to find the sum of first 10 integers
+ AREA SUM,CODE,READONLY
+ ENTRY
+ START
+ MOVR3,#11
+ MOVR0,#0
+ MOVR1,#1
+ LOOP ADDR0,R0,R1
+ ADDR1, R1, #1
+ CMPR1,R3
+ BNE LOOP
+ LDR R4, =SUM1
+ STR R0, [R4]
+ STOP B STOP
+ : Mark 1st Instruction to execute
+ ; Initialize R3 with 10
+ ; Initialize R0 with 0
+ : Initialize R1 with 1
+ : Add R0 with R1 and store sum in R0
+ ; Increment the number by 1
+ ; Compare incremented value with 10 in R3
+ ; If it’s not equal then loop
+ ; If yes, get address of SUM1 pointed by R4
+ ; Store sum in Location SUM1
+ AREA DATA1, DATA, READWRITE
+ SUM1DCD0X0
+ END

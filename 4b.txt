@@ -1,0 +1,17 @@
+ // Sum of 1st 10 integers-Simple ones
+ AREA SUM10, CODE, READONLY
+ ENTRY
+ START
+ MOVR0,#10
+ ; Mark 1st instruction to execute
+ ; Initialize R0 with last number 10
+MOVR1,#0
+ LOOP ADDR1,R1, R0
+ SUBS R0, R0, #1
+ BNE LOOP
+ LDR R2, =SUM
+ STR R1, [R2]
+ STOP BSTOP
+ AREA DATA1, DATA, READWRITE
+ SUMDCD0X0
+ END

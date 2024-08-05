@@ -1,0 +1,11 @@
+ Program-11 Demonstrate the handling of divide by zero, Invalid Operation and Overflow
+ exceptions in ARM.
+ AREAEXCEPT,CODE,READONLY
+ ENTRY
+ START
+ MOVR0,#3
+ ADDR0,#0xfffffffff
+ DIV R0, #0
+ MOVER1,=0x111111111
+ BACKBBACK
+ END

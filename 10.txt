@@ -1,0 +1,20 @@
+//Program-10 to enable and disable interrupts
+ AREA INT_EN_DIS, CODE, READONLY
+ ENTRY
+ START
+ MRSr1, cpsr
+ BIC r1, r1, #0x80
+ MSRcpsr_c, r1
+ ;IRQ enable
+ MRSr1, cpsr
+;IRQ disable
+ ORRr1, r1, #0x80
+ MSRcpsr_c, r1
+ MRSr1, cpsr
+ BIC r1, r1, #0x40
+ MSRcpsr_c, r1
+ MRSr1, cpsr
+ ORRr1, r1, #0x40
+ MSRcpsr_c, r1
+ BACK BBACK
+ END

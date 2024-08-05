@@ -1,0 +1,27 @@
+ // Program 3- Program to multiply two 16 bit binary numbers
+ AREA FIRST, CODE, READONLY
+ ENTRY
+ START
+ LDR R3, =NUM1
+ LDRH R0, [R3]
+ LDR R3, =NUM2
+ ; Get the address of 1st number NUM1
+ ; Get the value of NUM1 to register R0
+ : Get the address of 2nd number NUM2
+; Get the value of NUM2 to register R1
+ LDRH R1, [R3]
+ MULR2,R0, R1
+ LDR R3, =RESULT
+ STR R2, [R3]
+ STOP B STOP
+ ; Multiply NUM1 & NUM2andstore in register R2
+ ; Get the address of RESULT memory Location in
+ ; register R3
+ ; Store the result in R2 to memory location RESULT
+ ; pointed by R3
+ AREA DATA1, DATA, READONLY
+ NUM1DCW0x04
+ NUM2DCW0x03
+ AREA DATA2, DATA, READWRITE
+ RESULT DCD 0x0
+ END
